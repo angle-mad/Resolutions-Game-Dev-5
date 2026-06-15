@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhdq1us6df7qf"]
+
+[ext_resource type="Texture2D" uid="uid://b24ttpu7auaem" path="res://pep-spikes.png" id="1_pbi3r"]
+[ext_resource type="PackedScene" uid="uid://b22dnj6d1thil" path="res://kill.tscn" id="2_flbfb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6atfp"]
+radius = 7.0
+height = 16.0
+
+[node name="spiek" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pbi3r")
+
+[node name="Kill" parent="." instance=ExtResource("2_flbfb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_6atfp")
